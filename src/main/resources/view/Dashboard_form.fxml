@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1527.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.DashboardFormController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="322.0">
+         <image>
+            <Image url="@../img/Rectangle 1.png" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="42.0" layoutY="38.0">
+         <image>
+            <Image url="@../img/Deep.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="118.0" onAction="#btnDashboardOnAction" text="     Dashboard" textFill="#3e54ac">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/element-3.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="169.0" onAction="#btnOrdersOnAction" text="     Orders">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/menu-board.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="220.0" onAction="#btnBillsOnAction" text="     Bills">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/task.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="271.0" onAction="#btnFishStockOnAction" text="     Fish Stock">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="35.0">
+               <image>
+                  <Image url="@../img/icons8-fish-food-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="318.0" onAction="#btnSuppliersOnAction" text="    Suppliers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="364.0" onAction="#btnCustomersOnAction" text="     Customers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/people.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="415.0" onAction="#btnDriversOnAction" prefHeight="51.0" prefWidth="175.0" text="     Drivers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/setting.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="51.0" layoutY="716.0" onAction="#btnLogOutOnAction" text="Log Out" textFill="WHITE">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/login.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Ebrima Bold" size="23.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="model" layoutX="291.0" layoutY="64.0" prefHeight="404.0" prefWidth="537.0" styleClass="model" stylesheets="@Style.css">
+         <children>
+            <PieChart layoutX="43.0" layoutY="29.0" prefHeight="346.0" prefWidth="450.0" />
+         </children></AnchorPane>
+      <Pane fx:id="incomePane" layoutX="859.0" layoutY="64.0" prefHeight="123.0" prefWidth="382.0" styleClass="model" stylesheets="@Style.css">
+         <children>
+            <ImageView fitHeight="67.0" fitWidth="75.0" layoutX="25.0" layoutY="37.0">
+               <image>
+                  <Image url="@../img/received.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="63.0" layoutY="20.0" prefHeight="17.0" prefWidth="202.0" text="orders completed count this month" textFill="#a99d9d">
+               <font>
+                  <Font name="Corbel Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnOrdersCompleted" buttonType="RAISED" layoutX="156.0" layoutY="5.0" onAction="#btnOrderCompletedCountOnAction" prefHeight="77.0" prefWidth="218.0" text="1025" textFill="#fffcfc">
+               <font>
+                  <Font size="62.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="incomePane1" layoutX="859.0" layoutY="194.0" prefHeight="123.0" prefWidth="382.0" styleClass="model" stylesheets="@Style.css">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="75.0" layoutX="34.0" layoutY="32.0">
+               <image>
+                  <Image url="@../img/fish.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="71.0" layoutY="14.0" prefHeight="17.0" prefWidth="202.0" text="Fish Count On hand" textFill="#a99d9d">
+               <font>
+                  <Font name="Corbel Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnFishCountOnHand" buttonType="RAISED" layoutX="164.0" layoutY="-4.0" onAction="#btnFishCountOnHandOnAction" prefHeight="77.0" prefWidth="218.0" text="1025" textFill="#fffcfc">
+               <font>
+                  <Font size="62.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="incomePane2" layoutX="859.0" layoutY="327.0" prefHeight="123.0" prefWidth="382.0" styleClass="model" stylesheets="@Style.css">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="32.0" layoutY="32.0">
+               <image>
+                  <Image url="@../img/bill.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="71.0" layoutY="14.0" prefHeight="17.0" prefWidth="202.0" text="Bills Have to Paid in this month" textFill="#a99d9d">
+               <font>
+                  <Font name="Corbel Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnBillsHaveToPaid" buttonType="RAISED" layoutX="174.0" layoutY="-6.0" onAction="#btnBillsHaveToPaidOnAction" prefHeight="77.0" prefWidth="218.0" text="1025" textFill="#fffcfc">
+               <font>
+                  <Font size="62.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="1283.0" layoutY="76.0" prefHeight="705.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css">
+         <children>
+            <Pane layoutX="13.0" layoutY="134.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer1" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate1" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font></Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails1OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+            <Label layoutX="29.0" layoutY="20.0" prefHeight="47.0" prefWidth="140.0" text="Up Coming ">
+               <font>
+                  <Font name="Candara Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="40.0" prefHeight="47.0" prefWidth="140.0" text="Orders">
+               <font>
+                  <Font name="Candara Bold" size="17.0" />
+               </font>
+            </Label>
+            <Pane layoutX="13.0" layoutY="530.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer4" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate4" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails4OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+            <Pane layoutX="13.0" layoutY="398.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer3" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate3" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails3OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+            <Pane layoutX="13.0" layoutY="266.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer2" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate2" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails2OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+         </children></Pane>
+      <LineChart fx:id="lineChart" layoutX="323.0" layoutY="482.0" prefHeight="300.0" prefWidth="924.0" title="Total Orders For this year">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <JFXButton fx:id="btnOwner" buttonType="RAISED" layoutX="1283.0" layoutY="14.0" onAction="#btnOwnerOnAction" prefHeight="40.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css" text="Owner" textFill="#080808">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="41.0">
+               <image>
+                  <Image url="@../img/avatar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+.model{
+    -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
+    -fx-background-color: #1D1D41;
+    -fx-background-insets: 12;
+    -fx-background-radius: 50;
+}
+.order{
+    -fx-effect: dropshadow(three-pass-box, derive, 10, 0, 4, 4);
+    -fx-background-color: white;
+    -fx-background-insets: 12;
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(122, 11, 192, 1) ;
+    -fx-border-radius: 20;
+    -fx-border-insets:12 ;
+}
+.owner{
+     -fx-effect: dropshadow(three-pass-box, derive, 10, 0, 4, 4);
+     -fx-background-color: white;
+     -fx-background-insets: 12;
+     -fx-background-radius: 50;
+     -fx-border-color: black;
+     -fx-border-radius: 50;
+     -fx-border-insets:12 ;
+ }
+.buton{
+    -fx-background-insets: 12;
+    -fx-background-radius: 150;
+}
+.model2{
+    -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
+    -fx-background-color: rgba(150, 79, 195, 1);
+    -fx-background-insets: 12;
+    -fx-background-radius: 20;
+}
+.raside{
+    -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
+    -fx-background-insets: 12;
+}
+
+
+
