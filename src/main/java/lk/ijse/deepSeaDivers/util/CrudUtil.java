@@ -14,6 +14,7 @@ public class CrudUtil {
         }
 
         if(sql.startsWith("SELECT") || sql.startsWith("select")) {
+            return (T) pstm.executeQuery(); // ResultSet
         }
         return (T) (Boolean)(pstm.executeUpdate() > 0); //Boolean
     }
