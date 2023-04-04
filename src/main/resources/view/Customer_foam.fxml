@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1527.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.CustomerFoamController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="322.0">
+         <image>
+            <Image url="@../img/Rectangle 1.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="139.0" onAction="#btnDashboardOnAction" text="     Dashboard">
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/element-3_black.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="190.0" onAction="#btnOrdersOnAction" text="     Orders">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/menu-board.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="241.0" onAction="#btnBillsOnAction" text="     Bills" textFill="#3e54ac">
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/task_blue.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="282.0" onAction="#btnFishStockOnAction" text="     Fish Stock">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="35.0">
+               <image>
+                  <Image url="@../img/icons8-fish-food-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="318.0" onAction="#btnSuppliersOnAction" text="    Suppliers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="37.0" layoutY="364.0" onAction="#btnCustomersOnAction" text="     Customers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/people.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="415.0" onAction="#btnDriversOnAction" prefHeight="51.0" prefWidth="175.0" text="     Drivers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/setting.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="55.0" layoutY="716.0" onAction="#btnLogOutOnAction" text="Log Out" textFill="WHITE">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/login.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Ebrima Bold" size="23.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <ImageView layoutX="43.0" layoutY="47.0">
+         <image>
+            <Image url="@../img/Deep.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -34,7 +34,7 @@
 }
 .raside{
     -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
-    -fx-background-insets: 12;
+    /*-fx-background-insets: 12;*/
 }
 
 

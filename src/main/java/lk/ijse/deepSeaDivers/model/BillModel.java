@@ -1,11 +1,8 @@
 package lk.ijse.deepSeaDivers.model;
 
 import lk.ijse.deepSeaDivers.dto.Bill;
-import lk.ijse.deepSeaDivers.dto.Customer;
 import lk.ijse.deepSeaDivers.util.CrudUtil;
 
-import javax.xml.crypto.Data;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

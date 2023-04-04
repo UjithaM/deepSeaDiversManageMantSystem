@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="800.0" prefWidth="1527.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.SuppliersFoamController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="322.0">
+         <image>
+            <Image url="@../img/Rectangle 1.png" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="38.0" layoutY="41.0">
+         <image>
+            <Image url="@../img/Deep.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="121.0" onAction="#btnDashboardOnAction" text="     Dashboard">
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/element-3_black.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="172.0" onAction="#btnOrdersOnAction" text="     Orders">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/menu-board.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="223.0" onAction="#btnBillsOnAction" text="     Bills">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/task.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="274.0" onAction="#btnFishStockOnAction" text="     Fish Stock">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="35.0">
+               <image>
+                  <Image url="@../img/icons8-fish-food-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="310.0" onAction="#btnSuppliersOnAction" text="    Suppliers" textFill="#3e54ac">
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group _blue.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="356.0" onAction="#btnCustomersOnAction" text="     Customers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/people.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="28.0" layoutY="407.0" onAction="#btnDriversOnAction" prefHeight="51.0" prefWidth="175.0" text="     Drivers">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/setting.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="458.0" onAction="#btnLaborsOnAction" text="     Labors">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="47.0" layoutY="708.0" onAction="#btnLogOutOnAction" text="Log Out" textFill="WHITE">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/login.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Ebrima Bold" size="23.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="643.0" layoutY="21.0" text="Supplier Manage">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="476.0" layoutY="121.0" text="Supplier Id*">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="476.0" layoutY="141.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="788.0" layoutY="121.0" text="Supplier Name*">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="788.0" layoutY="141.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="477.0" layoutY="191.0" text="Supplier Address*">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddress" layoutX="476.0" layoutY="211.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="788.0" layoutY="191.0" text="Supplier Contact Number*">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSalary" layoutX="788.0" layoutY="211.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="476.0" layoutY="270.0" text="Supplier Bank Number*">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId1" layoutX="476.0" layoutY="290.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
+      <TableView layoutX="313.0" layoutY="433.0" prefHeight="320.0" prefWidth="884.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

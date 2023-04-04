@@ -4,6 +4,7 @@ import lk.ijse.deepSeaDivers.dto.Labour;
 import lk.ijse.deepSeaDivers.dto.Order;
 import lk.ijse.deepSeaDivers.util.CrudUtil;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -37,5 +38,27 @@ public class OrderModel {
     public static boolean orderUpdate(Order order) throws SQLException {
         String sql = "UPDATE order SET orderDate = ?, orderCompleteStatus = ?, custId = ? WHERE orderId = ?";
         return CrudUtil.execute(sql, order.getOrderDate(), order.getOrderCompleteStatus(), order.getCustId(), order.getOrderId());
+    }
+    public static String generateNextOrderId() throws SQLException {
+
+        String sql = "SELECT orderId FROM Orders ORDER BY orderId DESC LIMIT 1";
+
+        ResultSet resultSet = CrudUtil.execute(sql);
+        if(resultSet.next()) {
+            return splitOrderId(resultSet.getString(1));
+        }
+        return splitOrderId(null);
+    }
+    public static String splitOrderId(String currentOrderId) {
+        if(currentOrderId != null) {
+            String[] strings = currentOrderId.split("O00");
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            if (Integer.toString(id).trim().length() == 1) {
+                return "O00"+id;
+            }
+            return "O0"+id;
+        }
+        return "O001";
     }
 }
