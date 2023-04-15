@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1527.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.CustomerFoamController">
@@ -13,7 +18,60 @@
             <Image url="@../img/Rectangle 1.png" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="139.0" onAction="#btnDashboardOnAction" text="     Dashboard">
+      <Pane layoutX="324.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" style="-fx-background-color: linear-gradient(#da22ff, #9733ee); -fx-background-radius: 30;" stylesheets="@Style.css">
+         <children>
+            <Label layoutX="13.0" layoutY="108.0" text="Customer Id : ">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldCustomer" layoutX="144.0" layoutY="100.0" onAction="#btnCustomerSearchOnAction" prefHeight="26.0" prefWidth="224.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" layoutY="264.0" text="Customer Address:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldCustomerAddress" layoutX="200.0" layoutY="258.0" prefHeight="26.0" prefWidth="238.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldCustomerEmail" layoutX="644.0" layoutY="258.0" prefHeight="38.0" prefWidth="238.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldCustomerName" layoutX="644.0" layoutY="100.0" prefHeight="15.0" prefWidth="238.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="478.0" layoutY="105.0" text="Customer Name:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="346.0" onAction="#btnCustomerSaveOnAction" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #2ecc71;" text="Save " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="689.0" layoutY="346.0" onAction="#btnDeleteOnAction" style="-fx-background-color: E21818;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="799.0" layoutY="344.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #19A7CE;" text="Update">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+         </children></Pane>
+      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="118.0" onAction="#btnDashboardOnAction" text="     Dashboard">
          <font>
             <Font name="Candara Bold" size="24.0" />
          </font>
@@ -25,7 +83,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="190.0" onAction="#btnOrdersOnAction" text="     Orders">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="169.0" onAction="#btnOrdersOnAction" text="     Orders">
          <graphic>
             <ImageView>
                <image>
@@ -37,19 +95,19 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="241.0" onAction="#btnBillsOnAction" text="     Bills" textFill="#3e54ac">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="220.0" onAction="#btnBillsOnAction" text="     Bills">
          <font>
             <Font name="Candara Bold" size="24.0" />
          </font>
          <graphic>
             <ImageView>
                <image>
-                  <Image url="@../img/task_blue.png" />
+                  <Image url="@../img/task.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="282.0" onAction="#btnFishStockOnAction" text="     Fish Stock">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="271.0" onAction="#btnFishStockOnAction" text="     Fish Stock">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="35.0">
                <image>
@@ -61,7 +119,10 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="318.0" onAction="#btnSuppliersOnAction" text="    Suppliers">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="318.0" onAction="#btnSuppliersOnAction" text="    Suppliers">
+         <font>
+            <Font name="Candara Bold" size="24.0" />
+         </font>
          <graphic>
             <ImageView>
                <image>
@@ -69,11 +130,8 @@
                </image>
             </ImageView>
          </graphic>
-         <font>
-            <Font name="Candara Bold" size="24.0" />
-         </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="37.0" layoutY="364.0" onAction="#btnCustomersOnAction" text="     Customers">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="364.0" onAction="#btnCustomersOnAction" text="     Customers" textFill="#3e54ac">
          <graphic>
             <ImageView>
                <image>
@@ -85,7 +143,7 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="415.0" onAction="#btnDriversOnAction" prefHeight="51.0" prefWidth="175.0" text="     Drivers">
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="415.0" onAction="#btnDriversOnAction" prefHeight="51.0" prefWidth="175.0" text="     Drivers">
          <graphic>
             <ImageView>
                <image>
@@ -97,7 +155,7 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="55.0" layoutY="716.0" onAction="#btnLogOutOnAction" text="Log Out" textFill="WHITE">
+      <JFXButton layoutX="51.0" layoutY="716.0" onAction="#btnLogOutOnAction" text="Log Out" textFill="WHITE">
          <graphic>
             <ImageView>
                <image>
@@ -109,7 +167,7 @@
             <Font name="Ebrima Bold" size="23.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
+      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
          <graphic>
             <ImageView>
                <image>
@@ -121,10 +179,114 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <ImageView layoutX="43.0" layoutY="47.0">
+      <ImageView layoutX="42.0" layoutY="38.0">
          <image>
             <Image url="@../img/Deep.png" />
          </image>
       </ImageView>
+      <Pane layoutX="1283.0" layoutY="76.0" prefHeight="705.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css">
+         <children>
+            <Pane fx:id="pane1" layoutX="13.0" layoutY="134.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer1" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate1" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails1OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+            <Label layoutX="29.0" layoutY="20.0" prefHeight="47.0" prefWidth="140.0" text="Up Coming ">
+               <font>
+                  <Font name="Candara Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="40.0" prefHeight="47.0" prefWidth="140.0" text="Orders">
+               <font>
+                  <Font name="Candara Bold" size="17.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pane4" layoutX="13.0" layoutY="530.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer4" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate4" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails4OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane3" layoutX="13.0" layoutY="398.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer3" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate3" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails3OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane2" layoutX="13.0" layoutY="266.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+               <children>
+                  <Label fx:id="lblCustomer2" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderDate2" layoutX="43.0" layoutY="49.0" text="Date 05/03/2022" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails2OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <JFXButton fx:id="btnOwner" buttonType="RAISED" layoutX="1283.0" layoutY="14.0" onAction="#btnOwnerOnAction" prefHeight="40.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css" text="Owner" textFill="#080808">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="41.0">
+               <image>
+                  <Image url="@../img/avatar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblCustomer" layoutX="322.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
+        <columns>
+          <TableColumn fx:id="colCustomerId" prefWidth="75.0" text="Custmoer Id" />
+          <TableColumn fx:id="colCustomerName" prefWidth="370.4000244140625" text="Customer Name" />
+            <TableColumn fx:id="colCustomerAddress" prefWidth="223.2000732421875" text="Customer Address" />
+            <TableColumn fx:id="colCustomerEmail" prefWidth="253.59991455078125" text="Customer Email" />
+        </columns>
+      </TableView>
+      <Label layoutX="672.0" layoutY="29.0" prefHeight="42.0" prefWidth="224.0" text="Customer Manage" textFill="#5e5c5c">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="804.0" layoutY="271.0" text="Customer Email:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

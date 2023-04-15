@@ -51,4 +51,26 @@ public class CustomerModel {
         }
         return dataList;
     }
+    public static String generateNextCustomerId() throws SQLException {
+
+        String sql = "SELECT custId FROM customer ORDER BY custId DESC LIMIT 1";
+
+        ResultSet resultSet = CrudUtil.execute(sql);
+        if(resultSet.next()) {
+            return splitOrderId(resultSet.getString(1));
+        }
+        return splitOrderId(null);
+    }
+    public static String splitOrderId(String currentOrderId) {
+        if(currentOrderId != null) {
+            String[] strings = currentOrderId.split("C00");
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            if (Integer.toString(id).trim().length() == 1) {
+                return "C00"+id;
+            }
+            return "C0"+id;
+        }
+        return "C001";
+    }
 }

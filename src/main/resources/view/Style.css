@@ -36,6 +36,10 @@
     -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
     /*-fx-background-insets: 12;*/
 }
-
+.raside2{
+    -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
+    -fx-border-radius: 30;
+    -fx-background-color:  rgba(39, 0, 130, 0.42);
+}
 
 

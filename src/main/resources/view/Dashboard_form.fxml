@@ -73,16 +73,16 @@
          </font>
       </JFXButton>
       <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="318.0" onAction="#btnSuppliersOnAction" text="    Suppliers">
-         <graphic>
-            <ImageView>
-               <image>
-                  <Image url="@../img/Group.png" />
-               </image>
-            </ImageView>
-         </graphic>
          <font>
             <Font name="Candara Bold" size="24.0" />
          </font>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../img/Group%201000002316.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
       <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="364.0" onAction="#btnCustomersOnAction" text="     Customers">
          <graphic>
@@ -108,7 +108,7 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
          <graphic>
             <ImageView>
                <image>
@@ -195,7 +195,7 @@
       </Pane>
       <Pane layoutX="1283.0" layoutY="76.0" prefHeight="705.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css">
          <children>
-            <Pane layoutX="13.0" layoutY="134.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+            <Pane fx:id="pane1" layoutX="13.0" layoutY="134.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
                <children>
                   <Label fx:id="lblCustomer1" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
                      <font>
@@ -219,7 +219,7 @@
                   <Font name="Candara Bold" size="17.0" />
                </font>
             </Label>
-            <Pane layoutX="13.0" layoutY="530.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+            <Pane fx:id="pane4" layoutX="13.0" layoutY="530.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
                <children>
                   <Label fx:id="lblCustomer4" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
                      <font>
@@ -234,7 +234,7 @@
                   <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails4OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
                </children>
             </Pane>
-            <Pane layoutX="13.0" layoutY="398.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+            <Pane fx:id="pane3" layoutX="13.0" layoutY="398.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
                <children>
                   <Label fx:id="lblCustomer3" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
                      <font>
@@ -249,7 +249,7 @@
                   <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="77.0" onAction="#btnSeeDetails3OnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: black; -fx-background-radius: 50;" stylesheets="@Style.css" text="See details" textFill="#917b7b" />
                </children>
             </Pane>
-            <Pane layoutX="13.0" layoutY="266.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
+            <Pane fx:id="pane2" layoutX="13.0" layoutY="266.0" prefHeight="132.0" prefWidth="175.0" styleClass="model2" stylesheets="@Style.css">
                <children>
                   <Label fx:id="lblCustomer2" layoutX="56.0" layoutY="14.0" text="Customer" textFill="WHITE">
                      <font>
@@ -265,7 +265,7 @@
                </children>
             </Pane>
          </children></Pane>
-      <LineChart fx:id="lineChart" layoutX="323.0" layoutY="482.0" prefHeight="300.0" prefWidth="924.0" title="Total Orders For this year">
+      <LineChart fx:id="lineChart" layoutX="322.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" title="Total Orders For this year">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

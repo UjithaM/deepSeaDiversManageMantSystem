@@ -1,5 +1,6 @@
 package lk.ijse.deepSeaDivers.model;
 
+import lk.ijse.deepSeaDivers.dto.Customer;
 import lk.ijse.deepSeaDivers.dto.Labour;
 import lk.ijse.deepSeaDivers.dto.Order;
 import lk.ijse.deepSeaDivers.util.CrudUtil;
@@ -7,6 +8,8 @@ import lk.ijse.deepSeaDivers.util.CrudUtil;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderModel {
     public static boolean orderSave(String orderId, String orderDate, String orderCompleteStatus, String custId) throws SQLException {
@@ -22,7 +25,7 @@ public class OrderModel {
     }
 
     public static Order orderSearch(String id) throws SQLException {
-        String sql = "SELECT * FROM order WHERE orderId = ?";
+        String sql = "SELECT * FROM orders WHERE orderId = ?";
         ResultSet resultSet = CrudUtil.execute(sql, id);
 
         if(resultSet.next()) {
@@ -36,8 +39,23 @@ public class OrderModel {
         return null;
     }
     public static boolean orderUpdate(Order order) throws SQLException {
-        String sql = "UPDATE order SET orderDate = ?, orderCompleteStatus = ?, custId = ? WHERE orderId = ?";
+        String sql = "UPDATE orders SET orderDate = ?, orderCompleteStatus = ?, custId = ? WHERE orderId = ?";
         return CrudUtil.execute(sql, order.getOrderDate(), order.getOrderCompleteStatus(), order.getCustId(), order.getOrderId());
+    }
+    public static List<Order> customerSearchAll() throws SQLException {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM orders");
+        List<Order> dataList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            String orderId = resultSet.getString(1);
+            String orderDate = resultSet.getString(2);
+            String orderCompleteStatus = resultSet.getString(3);
+            String custId = resultSet.getString(4);
+
+            var order = new Order(orderId, orderDate, orderCompleteStatus, custId);
+            dataList.add(order);
+        }
+        return dataList;
     }
     public static String generateNextOrderId() throws SQLException {
 

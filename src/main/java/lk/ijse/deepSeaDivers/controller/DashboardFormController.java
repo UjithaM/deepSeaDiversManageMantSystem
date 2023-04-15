@@ -4,16 +4,36 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import lk.ijse.deepSeaDivers.dto.Order;
+import lk.ijse.deepSeaDivers.model.CustomerModel;
+import lk.ijse.deepSeaDivers.model.OrderModel;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class DashboardFormController {
+public class DashboardFormController implements Initializable {
 
+    @FXML
+    private Pane pane1;
+
+    @FXML
+    private Pane pane2;
+
+    @FXML
+    private Pane pane3;
+
+    @FXML
+    private Pane pane4;
     @FXML
     private JFXButton btnOwner;
     @FXML
@@ -24,6 +44,8 @@ public class DashboardFormController {
 
     @FXML
     private JFXButton btnOrdersCompleted;
+    @FXML
+    private Label lblCustomer1;
     @FXML
     private Label lblCustomer2;
 
@@ -175,6 +197,60 @@ public class DashboardFormController {
 
     @FXML
     void btnOwnerOnAction(ActionEvent event) {
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setUpcomingOrder();
+    }
+    void setUpcomingOrder() {
+        try {
+            List<Order> orderList  = OrderModel.customerSearchAll();
+            Integer order = 0;
+            pane1.setVisible(false);
+            pane2.setVisible(false);
+            pane3.setVisible(false);
+            pane4.setVisible(false);
+
+            for (Order od:orderList) {
+                if (od.getOrderCompleteStatus() == "yes"){
+                    continue;
+                }
+                if (order == 0) {
+                    pane1.setVisible(true);
+                    lblCustomer1.setText(CustomerModel.customerSearch(od.getCustId()).getName());
+                    lblOrderDate1.setText("Date : "+od.getOrderDate());
+                    order++;
+                    continue;
+                }
+                if (order == 1) {
+                    pane2.setVisible(true);
+                    lblCustomer2.setText(CustomerModel.customerSearch(od.getCustId()).getName());
+                    lblOrderDate2.setText("Date : "+od.getOrderDate());
+                    order++;
+                    continue;
+                }
+                if (order == 2) {
+                    pane3.setVisible(true);
+                    lblCustomer3.setText(CustomerModel.customerSearch(od.getCustId()).getName());
+                    lblOrderDate3.setText("Date : "+od.getOrderDate());
+                    order++;
+                    continue;
+                }
+                if (order == 3) {
+                    pane4.setVisible(true);
+                    lblCustomer4.setText(CustomerModel.customerSearch(od.getCustId()).getName());
+                    lblOrderDate4.setText("Date : "+od.getOrderDate());
+                    order++;
+                    continue;
+                }
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
