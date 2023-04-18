@@ -1,6 +1,6 @@
 .model{
     -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
-    -fx-background-color: #1D1D41;
+    -fx-background-color: linear-gradient(to right, #1D1D41, #4A569D);;
     -fx-background-insets: 12;
     -fx-background-radius: 50;
 }
@@ -28,7 +28,7 @@
 }
 .model2{
     -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
-    -fx-background-color: rgba(150, 79, 195, 1);
+    -fx-background-color:  linear-gradient(to right, #009FFD, #2A2A72);
     -fx-background-insets: 12;
     -fx-background-radius: 20;
 }
@@ -40,6 +40,11 @@
     -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
     -fx-border-radius: 30;
     -fx-background-color:  rgba(39, 0, 130, 0.42);
+}
+.forPane{
+    -fx-background-color:  linear-gradient(to right, #da22ff, #9733ee);
+    -fx-effect:  dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);
+    -fx-background-radius: 30;
 }
 
 

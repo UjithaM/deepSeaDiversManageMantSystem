@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import lk.ijse.deepSeaDivers.RegExPattern.RegExPatterns;
 import lk.ijse.deepSeaDivers.dto.Customer;
 import lk.ijse.deepSeaDivers.dto.Order;
 import lk.ijse.deepSeaDivers.dto.tm.CustomerTM;
@@ -208,7 +209,7 @@ public class CustomerFoamController implements Initializable {
     }
     void setUpcomingOrder() {
         try {
-            List<Order> orderList  = OrderModel.customerSearchAll();
+            List<Order> orderList  = OrderModel.orderList();
             Integer order = 0;
             pane1.setVisible(false);
             pane2.setVisible(false);
@@ -265,12 +266,23 @@ public class CustomerFoamController implements Initializable {
     }
     @FXML
     void btnUpdateOnAction(ActionEvent event)  {
-        try {
-            CustomerModel.customerUpdate(new Customer(txtFieldCustomer.getText(), txtFieldCustomerName.getText(), txtFieldCustomerAddress.getText(), txtFieldCustomerEmail.getText()));
-            new Alert(Alert.AlertType.CONFIRMATION).show();
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Customer Not Updated").show();
-        }
+        if (txtFieldCustomerName.getText().matches(RegExPatterns.getNamePattern().pattern()) &&
+                txtFieldCustomerEmail.getText().matches(RegExPatterns.getEmailPattern().pattern()) &&
+                txtFieldCustomerAddress.getText().matches(RegExPatterns.getCityPattern().pattern())
+        ) {
+            try {
+                CustomerModel.customerUpdate(new Customer(txtFieldCustomer.getText(), txtFieldCustomerName.getText(), txtFieldCustomerAddress.getText(), txtFieldCustomerEmail.getText()));
+                new Alert(Alert.AlertType.CONFIRMATION).show();
+                txtFieldCustomerName.setText("");
+                txtFieldCustomerAddress.setText("");
+                txtFieldCustomerEmail.setText("");
+                getAll();
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "Customer Not Updated").show();
+            }
+            getAll();
+        }else new Alert(Alert.AlertType.ERROR,"Invalided Input").show();
+
     }
     @FXML
     void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -287,6 +299,7 @@ public class CustomerFoamController implements Initializable {
                     txtFieldCustomerName.setText("");
                     txtFieldCustomerAddress.setText("");
                     txtFieldCustomerEmail.setText("");
+                    getAll();
                     new Alert(Alert.AlertType.CONFIRMATION, "Customer deleted successfully").show();
 
                 } catch (SQLException a) {
@@ -296,17 +309,23 @@ public class CustomerFoamController implements Initializable {
     }
     @FXML
     void btnCustomerSaveOnAction(ActionEvent event) {
-        try {
-            CustomerModel.customerSave(txtFieldCustomer.getText(), txtFieldCustomerName.getText(), txtFieldCustomerAddress.getText(), txtFieldCustomerEmail.getText());
-            new Alert(Alert.AlertType.CONFIRMATION, "Customer Added Successfully").show();
-            txtFieldCustomer.setText(CustomerModel.generateNextCustomerId());
-            txtFieldCustomerName.setText("");
-            txtFieldCustomerAddress.setText("");
-            txtFieldCustomerEmail.setText("");
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "customer Not Added").show();
-        }
-        getAll();
+        if (txtFieldCustomerName.getText().matches(RegExPatterns.getNamePattern().pattern()) &&
+                txtFieldCustomerEmail.getText().matches(RegExPatterns.getEmailPattern().pattern()) &&
+                txtFieldCustomerAddress.getText().matches(RegExPatterns.getCityPattern().pattern())
+        ) {
+            try {
+                CustomerModel.customerSave(txtFieldCustomer.getText(), txtFieldCustomerName.getText(), txtFieldCustomerAddress.getText(), txtFieldCustomerEmail.getText());
+                new Alert(Alert.AlertType.CONFIRMATION, "Customer Added Successfully").show();
+                txtFieldCustomer.setText(CustomerModel.generateNextCustomerId());
+                txtFieldCustomerName.setText("");
+                txtFieldCustomerAddress.setText("");
+                txtFieldCustomerEmail.setText("");
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "customer Not Added").show();
+            }
+            getAll();
+        }else new Alert(Alert.AlertType.ERROR,"Invalided Input").show();
+
     }
     @FXML
     void btnCustomerSearchOnAction(ActionEvent event) {
@@ -315,7 +334,7 @@ public class CustomerFoamController implements Initializable {
             txtFieldCustomerName.setText(customer.getName());
             txtFieldCustomerAddress.setText(customer.getAddress());
             txtFieldCustomerEmail.setText(customer.getEmail());
-        } catch (SQLException e) {
+        } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Invalid Customer Id").show();
         }
     }

@@ -18,7 +18,7 @@
             <Image url="@../img/Rectangle 1.png" />
          </image>
       </ImageView>
-      <Pane layoutX="324.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" style="-fx-background-color: linear-gradient(#da22ff, #9733ee); -fx-background-radius: 30;" stylesheets="@Style.css">
+      <Pane layoutX="324.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" style="-fx-background-color: linear-gradient(to right, #da22ff, #9733ee); -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);; -fx-background-radius: 30;" stylesheets="@Style.css">
          <children>
             <Label layoutX="13.0" layoutY="108.0" text="Customer Id : ">
                <font>
@@ -70,6 +70,11 @@
                   <Font size="20.0" />
                </font>
             </JFXButton>
+            <Label layoutX="477.0" layoutY="264.0" text="Customer Email:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
          </children></Pane>
       <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="118.0" onAction="#btnDashboardOnAction" text="     Dashboard">
          <font>
@@ -281,11 +286,6 @@
       <Label layoutX="672.0" layoutY="29.0" prefHeight="42.0" prefWidth="224.0" text="Customer Manage" textFill="#5e5c5c">
          <font>
             <Font name="System Bold" size="26.0" />
-         </font>
-      </Label>
-      <Label layoutX="804.0" layoutY="271.0" text="Customer Email:">
-         <font>
-            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
    </children>

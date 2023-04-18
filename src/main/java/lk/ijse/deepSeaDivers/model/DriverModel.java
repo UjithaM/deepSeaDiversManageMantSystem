@@ -21,7 +21,7 @@ public class DriverModel {
         return CrudUtil.execute(sql, driverId);
     }
     public static Driver driverSearch(String id) throws SQLException {
-        String sql = "SELECT * FROM driver WHERE custId = ?";
+        String sql = "SELECT * FROM driver WHERE driverId = ?";
         ResultSet resultSet = CrudUtil.execute(sql, id);
 
         if(resultSet.next()) {
@@ -50,5 +50,28 @@ public class DriverModel {
             dataList.add(driver);
         }
         return dataList;
+    }
+    public static String generateNextDriverId() throws SQLException {
+
+        String sql = "SELECT driverId FROM driver ORDER BY driverId DESC LIMIT 1";
+
+        ResultSet resultSet = CrudUtil.execute(sql);
+        if(resultSet.next()) {
+            return splitOrderId(resultSet.getString(1));
+        }
+        return splitOrderId(null);
+    }
+    public static String splitOrderId(String currentOrderId) {
+        if (currentOrderId != null) {
+            String[] strings = currentOrderId.split("D0");
+            System.out.println(strings.length);
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            if (Integer.toString(id).trim().length() == 1) {
+                return "D00" + id;
+            }
+            return "D0" + id;
+        }
+        return "D001";
     }
 }

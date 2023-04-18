@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="536.0" prefWidth="955.0" style="-fx-background-color: linear-gradient(to right, #36D1DC, #5B86E5);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.BillDetailsController">
+   <children>
+      <TableView fx:id="tblOrderDetails" layoutX="29.0" layoutY="95.0" prefHeight="414.0" prefWidth="896.0" styleClass="raside" stylesheets="@Style.css">
+        <columns>
+          <TableColumn fx:id="colFishId" prefWidth="139.19997787475586" text="Fish ID" />
+          <TableColumn fx:id="colFishCommonName" prefWidth="612.8000640869141" text="Fish Common Name" />
+            <TableColumn fx:id="colFishQuantity" prefWidth="145.59991455078125" text="Fish Quantity" />
+        </columns>
+      </TableView>
+      <Label layoutX="427.0" layoutY="14.0" text="Order Details">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

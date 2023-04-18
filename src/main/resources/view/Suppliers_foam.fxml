@@ -13,6 +13,50 @@
 
 <AnchorPane fx:id="root" prefHeight="800.0" prefWidth="1527.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.SuppliersFoamController">
    <children>
+      <Pane layoutX="323.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" styleClass="forPane" stylesheets="@Style.css">
+         <children>
+            <JFXButton layoutX="796.0" layoutY="360.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="76.0" style="-fx-background-color: #19A7CE;" text="Update">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="722.0" layoutY="360.0" onAction="#btnDeleteOnAction" style="-fx-background-color: E21818;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="653.0" layoutY="360.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="60.0" style="-fx-background-color: linear-gradient(to right,  #2ecc71, #009FFD);" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="152.0" layoutY="84.0" text="Supplier Id*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="464.0" layoutY="84.0" text="Supplier Name*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="153.0" layoutY="154.0" text="Supplier Address*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="464.0" layoutY="154.0" text="Supplier Contact Number*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="152.0" layoutY="233.0" text="Supplier Bank Number*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <ImageView fitHeight="800.0" fitWidth="322.0">
          <image>
             <Image url="@../img/Rectangle 1.png" />
@@ -136,40 +180,33 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Label layoutX="476.0" layoutY="121.0" text="Supplier Id*">
+      <TextField fx:id="txtSupplierId" layoutX="476.0" layoutY="141.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtId" layoutX="476.0" layoutY="141.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="788.0" layoutY="121.0" text="Supplier Name*">
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtSupplierName" layoutX="788.0" layoutY="141.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtName" layoutX="788.0" layoutY="141.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="477.0" layoutY="191.0" text="Supplier Address*">
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtSupplierAddress" layoutX="476.0" layoutY="211.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
          <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtAddress" layoutX="476.0" layoutY="211.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="788.0" layoutY="191.0" text="Supplier Contact Number*">
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtSupplierContactNumber" layoutX="788.0" layoutY="211.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
          <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtSalary" layoutX="788.0" layoutY="211.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="476.0" layoutY="270.0" text="Supplier Bank Number*">
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtSupplierBankNumber" layoutX="476.0" layoutY="290.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtId1" layoutX="476.0" layoutY="290.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <TableView layoutX="332.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <TableView fx:id="tblSupplier" layoutX="332.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colSupplierId" prefWidth="75.0" text="Supplier Id" />
+            <TableColumn fx:id="colSupplierName" prefWidth="308.0000305175781" text="Supplier Name" />
+            <TableColumn fx:id="colSupplierAddress" prefWidth="153.60000610351562" text="Supplier Address" />
+            <TableColumn fx:id="colSupplierContactNumber" prefWidth="190.39996337890625" text="Supplier Contact Number" />
+            <TableColumn fx:id="colSupplierBankNumber" prefWidth="196.79998779296875" text="Supplier Bank Number" />
          </columns>
       </TableView>
       <Pane layoutX="1283.0" layoutY="76.0" prefHeight="705.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css">

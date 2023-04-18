@@ -23,6 +23,75 @@
             <Image url="@../img/Deep.png" />
          </image>
       </ImageView>
+      <Pane layoutX="323.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" styleClass="forPane" stylesheets="@Style.css">
+         <children>
+            <TextField fx:id="txtFishonHand" layoutX="129.0" layoutY="272.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldFishId" layoutX="129.0" layoutY="98.0" onAction="#btnFishSearchOnAction" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="514.0" layoutY="61.0" text="Fish Common name*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFishId" layoutX="131.0" layoutY="61.0" text="Fish Id:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFishCommanName" layoutX="514.0" layoutY="98.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="129.0" layoutY="153.0" prefHeight="3.0" prefWidth="209.0" text="Fish Scientfic Name*">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFishScientficName" layoutX="129.0" layoutY="185.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="131.0" layoutY="242.0" prefHeight="30.0" prefWidth="157.0" text="Fish on Hand">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFishUnitPrice" layoutX="514.0" layoutY="183.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="514.0" layoutY="153.0" prefHeight="9.0" prefWidth="109.0" text="Unit Price $">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="679.0" layoutY="354.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="60.0" style="-fx-background-color: linear-gradient(to right,  #2ecc71, #009FFD);" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="750.0" layoutY="354.0" onAction="#btnDeleteOnAction" style="-fx-background-color: E21818;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="825.0" layoutY="354.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="76.0" style="-fx-background-color: #19A7CE;" text="Update">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
       <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="118.0" onAction="#btnDashboardOnAction" text="     Dashboard">
          <font>
             <Font name="Candara Bold" size="24.0" />
@@ -78,7 +147,7 @@
          <graphic>
             <ImageView>
                <image>
-                  <Image url="@../img/Group%201000002316.png" />
+                  <Image url="@../img/Group.png" />
                </image>
             </ImageView>
          </graphic>
@@ -107,7 +176,7 @@
             <Font name="Candara Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="466.0" onAction="#btnLaborsOnAction" text="     Labors">
+      <JFXButton buttonType="RAISED" layoutX="36.0" layoutY="459.0" onAction="#btnLaborsOnAction" text="     Labors">
          <graphic>
             <ImageView>
                <image>
@@ -136,39 +205,13 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Label fx:id="lblFishId" layoutX="456.0" layoutY="92.0" text="Fish Id:">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="456.0" layoutY="143.0" text="Fish Common name*">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtCommanName" layoutX="456.0" layoutY="169.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="456.0" layoutY="231.0" text="Fish Scientfic Name*">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtFishScientficName" layoutX="456.0" layoutY="257.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="456.0" layoutY="307.0" text="Unit Price $">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtUnitPrice" layoutX="456.0" layoutY="333.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="456.0" layoutY="389.0" prefHeight="22.0" prefWidth="122.0" text="Fish on Hand">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtFishonHand" layoutX="456.0" layoutY="415.0" onAction="#codeSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <TableView layoutX="322.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
+      <TableView fx:id="tblFish" layoutX="322.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="colFishId" prefWidth="75.0" text="Fish Id" />
+          <TableColumn fx:id="colFishCommonName" prefWidth="278.4000244140625" text="Fish Commonname" />
+            <TableColumn fx:id="colFishScientificName" minWidth="0.0" prefWidth="344.79998779296875" text="Fish Scientific Name" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="109.59991455078125" text="Unit Price $" />
+            <TableColumn fx:id="colFishOnHand" prefWidth="115.20001220703125" text="Fish On Hand" />
         </columns>
       </TableView>
       <Pane layoutX="1283.0" layoutY="76.0" prefHeight="705.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css">

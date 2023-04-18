@@ -1,8 +1,9 @@
 package lk.ijse.deepSeaDivers.model;
 
-import lk.ijse.deepSeaDivers.dto.Fish;
+
 import lk.ijse.deepSeaDivers.dto.Fishsupplier;
 import lk.ijse.deepSeaDivers.util.CrudUtil;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,5 +55,39 @@ public class FishSupplierModel {
             dataList.add(fishSupplier);
         }
         return dataList;
+    }
+    public static List<String> getSupplierIds() throws SQLException {
+        String sql = "SELECT supplierId FROM fishsupplier";
+
+        List<String> ids = new ArrayList<>();
+
+        ResultSet resultSet = CrudUtil.execute(sql);
+        while (resultSet.next()) {
+            ids.add(resultSet.getString(1));
+        }
+        return ids;
+    }
+    public static String generateNextFishId() throws SQLException {
+
+        String sql = "SELECT supplierId FROM fishsupplier ORDER BY supplierId DESC LIMIT 1";
+
+        ResultSet resultSet = CrudUtil.execute(sql);
+        if(resultSet.next()) {
+            return splitOrderId(resultSet.getString(1));
+        }
+        return splitOrderId(null);
+    }
+    public static String splitOrderId(String currentOrderId) {
+        if (currentOrderId != null) {
+            String[] strings = currentOrderId.split("S0");
+            System.out.println(strings.length);
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            if (Integer.toString(id).trim().length() == 1) {
+                return "S00" + id;
+            }
+            return "S0" + id;
+        }
+        return "S001";
     }
 }

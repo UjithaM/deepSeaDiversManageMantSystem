@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="605.0" prefWidth="955.0" style="-fx-background-color: linear-gradient(to right, #36D1DC, #5B86E5);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.deepSeaDivers.controller.BillDetailsController">
+   <children>
+      <TableView fx:id="tblOrderDetails" layoutX="30.0" layoutY="257.0" prefHeight="325.0" prefWidth="896.0" styleClass="raside" stylesheets="@Style.css">
+        <columns>
+          <TableColumn fx:id="colFishId" prefWidth="139.19997787475586" text="Fish ID" />
+          <TableColumn fx:id="colFishCommonName" prefWidth="612.8000640869141" text="Fish Common Name" />
+            <TableColumn fx:id="colFishQuantity" prefWidth="145.59991455078125" text="Fish Quantity" />
+        </columns>
+      </TableView>
+      <Label layoutX="427.0" layoutY="14.0" text="Order Details">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="62.0" text="Order Id : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="499.0" layoutY="61.0" text="Customer Name : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="138.0" text="Code">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbFishCode" layoutX="74.0" layoutY="176.0" onAction="#cmbFishOnAction" prefHeight="26.0" prefWidth="157.0" styleClass="raside" stylesheets="@Style.css" />
+      <Label fx:id="lblqtyOnHand" layoutX="501.0" layoutY="138.0" text="QTY On Hand : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblFishName" layoutX="254.0" layoutY="138.0" text="Fish Name : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="751.0" layoutY="138.0" text="QTY ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="745.0" layoutY="167.0" prefHeight="19.0" prefWidth="58.0">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

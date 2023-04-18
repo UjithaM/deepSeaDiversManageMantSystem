@@ -10,4 +10,6 @@ public class CustomerTM {
     private String custName;
     private String custAddress;
     private String custEmail;
+
+
 }

@@ -42,7 +42,7 @@ public class OrderModel {
         String sql = "UPDATE orders SET orderDate = ?, orderCompleteStatus = ?, custId = ? WHERE orderId = ?";
         return CrudUtil.execute(sql, order.getOrderDate(), order.getOrderCompleteStatus(), order.getCustId(), order.getOrderId());
     }
-    public static List<Order> customerSearchAll() throws SQLException {
+    public static List<Order> orderList() throws SQLException {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM orders");
         List<Order> dataList = new ArrayList<>();
 

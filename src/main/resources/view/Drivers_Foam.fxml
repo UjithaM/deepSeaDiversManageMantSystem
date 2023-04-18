@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -72,7 +73,7 @@
          <graphic>
             <ImageView>
                <image>
-                  <Image url="@../img/Group%201000002316.png" />
+                  <Image url="@../img/Group.png" />
                </image>
             </ImageView>
          </graphic>
@@ -216,11 +217,66 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
-      <TableView layoutX="332.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
+      <TableView fx:id="tblDriver" layoutX="332.0" layoutY="469.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colDriverId" prefWidth="128.80001831054688" text="Driver Id" />
+            <TableColumn fx:id="colDriverName" prefWidth="523.4665832519531" text="Driver Name" />
+            <TableColumn fx:id="colDriverContactNumber" prefWidth="270.13330078125" text="Driver Contact Number" />
          </columns>
       </TableView>
+      <Pane layoutX="323.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" styleClass="forPane" stylesheets="@Style.css">
+         <children>
+            <Label layoutX="369.0" layoutY="11.0" prefHeight="42.0" prefWidth="183.0" text="Driver Manage" textFill="#5e5c5c">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="116.0" text="Driver Id :">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="526.0" layoutY="116.0" text="Driver Name :">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="200.0" text="Driver Contact Number :">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDriverId" layoutX="204.0" layoutY="110.0" onAction="#btnDriverSearchOnAction" prefHeight="26.0" prefWidth="224.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldDriverName" layoutX="665.0" layoutY="110.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldDriverContactNumber" layoutX="341.0" layoutY="194.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <JFXButton buttonType="RAISED" layoutX="679.0" layoutY="354.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="60.0" style="-fx-background-color: linear-gradient(to right,  #2ecc71, #009FFD);" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="750.0" layoutY="354.0" onAction="#btnDeleteOnAction" style="-fx-background-color: E21818;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="825.0" layoutY="354.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="76.0" style="-fx-background-color: #19A7CE;" text="Update">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

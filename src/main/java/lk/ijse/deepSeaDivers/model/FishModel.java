@@ -74,4 +74,27 @@ public class FishModel {
 
         return CrudUtil.execute(sql,fishOnHand, fishId);
     }
+    public static String generateNextFishId() throws SQLException {
+
+        String sql = "SELECT fishId FROM fish ORDER BY fishId DESC LIMIT 1";
+
+        ResultSet resultSet = CrudUtil.execute(sql);
+        if(resultSet.next()) {
+            return splitOrderId(resultSet.getString(1));
+        }
+        return splitOrderId(null);
+    }
+    public static String splitOrderId(String currentOrderId) {
+        if (currentOrderId != null) {
+            String[] strings = currentOrderId.split("F0");
+            System.out.println(strings.length);
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            if (Integer.toString(id).trim().length() == 1) {
+                return "F00" + id;
+            }
+            return "F0" + id;
+        }
+        return "F001";
+    }
 }

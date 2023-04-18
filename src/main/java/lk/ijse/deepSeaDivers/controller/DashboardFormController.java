@@ -206,7 +206,7 @@ public class DashboardFormController implements Initializable {
     }
     void setUpcomingOrder() {
         try {
-            List<Order> orderList  = OrderModel.customerSearchAll();
+            List<Order> orderList  = OrderModel.orderList();
             Integer order = 0;
             pane1.setVisible(false);
             pane2.setVisible(false);

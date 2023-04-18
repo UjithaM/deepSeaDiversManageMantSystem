@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -72,7 +73,7 @@
          <graphic>
             <ImageView>
                <image>
-                  <Image url="@../img/Group%201000002316.png" />
+                  <Image url="@../img/Group.png" />
                </image>
             </ImageView>
          </graphic>
@@ -130,10 +131,12 @@
             <Image url="@../img/Deep.png" />
          </image>
       </ImageView>
-      <TableView layoutX="332.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
+      <TableView fx:id="tblLabour" layoutX="332.0" layoutY="468.0" prefHeight="300.0" prefWidth="924.0" styleClass="raside" stylesheets="@Style.css">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colLabourID" prefWidth="94.4000244140625" text="Labour Id" />
+            <TableColumn fx:id="colLabourName" prefWidth="273.5999755859375" text="Labour Name" />
+            <TableColumn fx:id="colLabourAddress" prefWidth="328.800048828125" text="Labour Address" />
+            <TableColumn fx:id="colLabourContactNumber" prefWidth="227.199951171875" text="Labour Contact Number" />
          </columns>
       </TableView>
       <Pane layoutX="1283.0" layoutY="76.0" prefHeight="705.0" prefWidth="200.0" styleClass="order" stylesheets="@Style.css">
@@ -222,5 +225,69 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
+      <Pane layoutX="323.0" layoutY="26.0" prefHeight="421.0" prefWidth="924.0" styleClass="forPane" stylesheets="@Style.css">
+         <children>
+            <Label fx:id="lblFishId" layoutX="47.0" layoutY="66.0" text="Labour Id:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtLabourAddress" layoutX="47.0" layoutY="238.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLabourName" layoutX="527.0" layoutY="96.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLabourContactNumber" layoutX="527.0" layoutY="238.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblFishId1" layoutX="56.0" layoutY="208.0" text="Labour Address">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFishId2" layoutX="527.0" layoutY="66.0" text="Labour Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFishId3" layoutX="535.0" layoutY="208.0" text="Labour Contact number">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="785.0" layoutY="364.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="76.0" style="-fx-background-color: #19A7CE;" text="Update">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="711.0" layoutY="364.0" onAction="#btnDeleteOnAction" style="-fx-background-color: E21818;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="642.0" layoutY="364.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="60.0" style="-fx-background-color: linear-gradient(to right,  #2ecc71, #009FFD);" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="txtLabourId" layoutX="39.0" layoutY="96.0" onAction="#btnLabourIdSearchOnAction" prefHeight="35.0" prefWidth="245.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Label layoutX="712.0" layoutY="43.0" prefHeight="42.0" prefWidth="157.0" text="Labour Form" textFill="#5e5c5c">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
